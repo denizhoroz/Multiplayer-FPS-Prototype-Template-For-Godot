@@ -1,0 +1,201 @@
+[gd_scene load_steps=32 format=3 uid="uid://bwqif3ujoor4x"]
+
+[ext_resource type="Script" uid="uid://cn0bktoqmkqyd" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://dop41xfkccxgc" path="res://assets/models/X Bot.fbx" id="2_smehm"]
+[ext_resource type="AnimationLibrary" uid="uid://bbikbwr3np31" path="res://assets/animations/Pistol Idle(1).fbx" id="3_smehm"]
+[ext_resource type="AnimationLibrary" uid="uid://db2x13xrxmtlh" path="res://assets/animations/Pistol Jump.fbx" id="4_ur7pv"]
+[ext_resource type="AnimationLibrary" uid="uid://btqkxpbkwi5i6" path="res://assets/animations/Pistol Run.fbx" id="5_y4r1p"]
+[ext_resource type="AnimationLibrary" uid="uid://cdp1kt0e5oy2m" path="res://assets/animations/Pistol Run Backward.fbx" id="6_d2wvv"]
+[ext_resource type="AnimationLibrary" uid="uid://b1vqfxpfiukmm" path="res://assets/animations/Pistol Strafe.fbx" id="7_3v2ag"]
+[ext_resource type="AnimationLibrary" uid="uid://b5s2wk2rragcj" path="res://assets/animations/Pistol Strafe(1).fbx" id="8_jej6c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g2els"]
+height = 1.797168
+radius = 0.21
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_smehm"]
+animation = &"Pistol Idle(1)/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ur7pv"]
+animation = &"Pistol Jump/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y4r1p"]
+animation = &"Pistol Run Backward/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2wvv"]
+animation = &"Pistol Run/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3v2ag"]
+animation = &"Pistol Strafe(1)/mixamo_com"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jej6c"]
+animation = &"Pistol Strafe/mixamo_com"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f1ej7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oprun"]
+advance_mode = 2
+advance_condition = &"is_running_f"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8ls1"]
+advance_mode = 2
+advance_condition = &"is_running_b"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfm1y"]
+advance_mode = 2
+advance_condition = &"is_running_r"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fulsm"]
+advance_mode = 2
+advance_condition = &"is_running_l"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4r5pv"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_60mlk"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i4ail"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a38lo"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ni07"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l71n6"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ke2ow"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ujl30"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_31cv2"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pf23h"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_smehm"]
+states/End/position = Vector2(1133, 100)
+"states/Pistol Idle(1)_mixamo_com/node" = SubResource("AnimationNodeAnimation_smehm")
+"states/Pistol Idle(1)_mixamo_com/position" = Vector2(395, 100)
+"states/Pistol Jump_mixamo_com/node" = SubResource("AnimationNodeAnimation_ur7pv")
+"states/Pistol Jump_mixamo_com/position" = Vector2(395, -224.99998)
+"states/Pistol Run Backward_mixamo_com/node" = SubResource("AnimationNodeAnimation_y4r1p")
+"states/Pistol Run Backward_mixamo_com/position" = Vector2(900, -162)
+"states/Pistol Run_mixamo_com/node" = SubResource("AnimationNodeAnimation_d2wvv")
+"states/Pistol Run_mixamo_com/position" = Vector2(900, -311)
+"states/Pistol Strafe(1)_mixamo_com/node" = SubResource("AnimationNodeAnimation_3v2ag")
+"states/Pistol Strafe(1)_mixamo_com/position" = Vector2(900, -35)
+"states/Pistol Strafe_mixamo_com/node" = SubResource("AnimationNodeAnimation_jej6c")
+"states/Pistol Strafe_mixamo_com/position" = Vector2(900, 100)
+transitions = ["Start", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_f1ej7"), "Pistol Idle(1)_mixamo_com", "Pistol Run_mixamo_com", SubResource("AnimationNodeStateMachineTransition_oprun"), "Pistol Idle(1)_mixamo_com", "Pistol Run Backward_mixamo_com", SubResource("AnimationNodeStateMachineTransition_a8ls1"), "Pistol Idle(1)_mixamo_com", "Pistol Strafe(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_qfm1y"), "Pistol Idle(1)_mixamo_com", "Pistol Strafe_mixamo_com", SubResource("AnimationNodeStateMachineTransition_fulsm"), "Pistol Strafe_mixamo_com", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_4r5pv"), "Pistol Strafe(1)_mixamo_com", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_60mlk"), "Pistol Run Backward_mixamo_com", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_i4ail"), "Pistol Run_mixamo_com", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_a38lo"), "Pistol Idle(1)_mixamo_com", "Pistol Jump_mixamo_com", SubResource("AnimationNodeStateMachineTransition_4ni07"), "Pistol Run_mixamo_com", "Pistol Jump_mixamo_com", SubResource("AnimationNodeStateMachineTransition_l71n6"), "Pistol Run Backward_mixamo_com", "Pistol Jump_mixamo_com", SubResource("AnimationNodeStateMachineTransition_ke2ow"), "Pistol Strafe(1)_mixamo_com", "Pistol Jump_mixamo_com", SubResource("AnimationNodeStateMachineTransition_ujl30"), "Pistol Strafe_mixamo_com", "Pistol Jump_mixamo_com", SubResource("AnimationNodeStateMachineTransition_31cv2"), "Pistol Jump_mixamo_com", "Pistol Idle(1)_mixamo_com", SubResource("AnimationNodeStateMachineTransition_pf23h")]
+graph_offset = Vector2(0, -346.01898)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.908252, 0)
+shape = SubResource("CylinderShape3D_g2els")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="modelbase" parent="Visuals" instance=ExtResource("2_smehm")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Visuals/modelbase" index="0"]
+bones/0/position = Vector3(-0.012131773, 0.9903527, 0.015250724)
+bones/0/rotation = Quaternion(0.04398079, -0.4537595, -0.042898174, 0.8890039)
+bones/1/rotation = Quaternion(-0.05727178, 0.0574232, 0.030519063, 0.9962385)
+bones/2/rotation = Quaternion(0.0232367, 0.068293534, 0.008149474, 0.99736136)
+bones/3/rotation = Quaternion(0.03674897, 0.0685296, 0.0057223425, 0.9969556)
+bones/4/rotation = Quaternion(0.10316448, 0.06668285, -0.024158577, 0.99213254)
+bones/5/rotation = Quaternion(0.0050697415, 0.16423103, 0.08956954, 0.9823339)
+bones/7/rotation = Quaternion(-0.41381407, 0.51031625, -0.57011, -0.4932645)
+bones/8/rotation = Quaternion(0.36757502, 0.09248228, -0.8224048, 0.42424765)
+bones/9/rotation = Quaternion(8.0517175e-08, -1.3955963e-08, -0.24887255, 0.9685363)
+bones/10/rotation = Quaternion(-0.21969506, 0.38843957, 0.16655988, 0.87926495)
+bones/11/rotation = Quaternion(0.349343, 0.02837745, -0.15058248, 0.9243805)
+bones/12/rotation = Quaternion(-0.11207489, -0.18898788, 0.21082126, 0.9525111)
+bones/13/rotation = Quaternion(-0.27157733, -0.018947976, 0.40821695, 0.8713471)
+bones/15/rotation = Quaternion(0.21980996, 0.0037095677, 0.03857592, 0.9747727)
+bones/16/rotation = Quaternion(0.42037505, -1.932276e-07, 0.034247346, 0.90670395)
+bones/17/rotation = Quaternion(0.43098643, -3.3730768e-08, 0.035111845, 0.90167505)
+bones/19/rotation = Quaternion(0.43021443, -0.035448417, 0.14220598, 0.89075047)
+bones/20/rotation = Quaternion(0.82517153, 1.5518164e-07, 0.06722547, 0.56086785)
+bones/21/rotation = Quaternion(0.1627596, -6.070329e-08, 0.013259805, 0.98657674)
+bones/23/rotation = Quaternion(0.47896874, 0.0017699413, 0.07016993, 0.8750212)
+bones/24/rotation = Quaternion(0.7537356, -9.166258e-08, 0.0614057, 0.6543026)
+bones/25/rotation = Quaternion(0.4171002, 5.078638e-09, 0.03398052, 0.9082251)
+bones/27/rotation = Quaternion(0.4916611, 0.018614525, 0.04132004, 0.86960655)
+bones/28/rotation = Quaternion(0.5839473, 8.9814435e-08, 0.047573444, 0.8103965)
+bones/29/rotation = Quaternion(0.43513784, -7.460767e-08, 0.035450045, 0.8996657)
+bones/31/rotation = Quaternion(0.5160145, 0.5585488, -0.5726951, 0.3062232)
+bones/32/rotation = Quaternion(0.25290167, -0.25011477, 0.505548, 0.7860691)
+bones/33/rotation = Quaternion(-4.364439e-08, -5.0921948e-08, 0.6552809, 0.75538534)
+bones/34/rotation = Quaternion(-0.18046072, -0.38726568, -0.340213, 0.837684)
+bones/35/rotation = Quaternion(0.12810664, -0.17384584, 0.15252204, 0.96441865)
+bones/36/rotation = Quaternion(-0.09404947, 0.07123523, 0.03155746, 0.9925142)
+bones/37/rotation = Quaternion(0.02688791, 0.018642696, 0.21840355, 0.97530997)
+bones/39/rotation = Quaternion(0.27148792, -0.012903718, -0.019735008, 0.96215296)
+bones/40/rotation = Quaternion(0.5122897, -8.4172564e-07, -0.052497827, 0.85720664)
+bones/41/rotation = Quaternion(0.20703419, -1.1659806e-07, -0.021216337, 0.97810364)
+bones/43/rotation = Quaternion(0.35415152, -0.025176657, -0.00660215, 0.93482584)
+bones/44/rotation = Quaternion(0.5003143, -8.109791e-07, -0.051270634, 0.86432457)
+bones/45/rotation = Quaternion(0.33513072, -4.844776e-07, -0.034343213, 0.9415455)
+bones/47/rotation = Quaternion(0.42083326, -0.047276393, 0.023574458, 0.90559846)
+bones/48/rotation = Quaternion(0.5081802, -8.512704e-07, -0.0520767, 0.8596749)
+bones/49/rotation = Quaternion(0.17301059, 1.4383243e-08, -0.01772957, 0.9847604)
+bones/51/rotation = Quaternion(0.3245733, -0.049477015, 0.07739285, 0.9413897)
+bones/52/rotation = Quaternion(0.49149063, -5.97173e-07, -0.050366342, 0.8694253)
+bones/53/rotation = Quaternion(0.27304554, -6.930554e-07, -0.027980784, 0.9615941)
+bones/55/rotation = Quaternion(-0.12739602, 0.11871014, 0.98264915, 0.06386637)
+bones/56/rotation = Quaternion(-0.20799558, -0.07393302, 0.001573732, 0.97533035)
+bones/57/rotation = Quaternion(0.50600415, 0.12464287, 0.07100893, 0.8505185)
+bones/60/rotation = Quaternion(0.12512507, 0.2542163, 0.94468474, -0.16519283)
+bones/61/rotation = Quaternion(-0.25583997, -0.086417936, 0.02074827, 0.96262527)
+bones/62/rotation = Quaternion(0.42377484, -0.07964625, -0.04591012, 0.9010903)
+
+[node name="AnimationPlayer" parent="Visuals/modelbase" index="1"]
+libraries = {
+&"Pistol Idle(1)": ExtResource("3_smehm"),
+&"Pistol Jump": ExtResource("4_ur7pv"),
+&"Pistol Run": ExtResource("5_y4r1p"),
+&"Pistol Run Backward": ExtResource("6_d2wvv"),
+&"Pistol Strafe": ExtResource("7_3v2ag"),
+&"Pistol Strafe(1)": ExtResource("8_jej6c")
+}
+
+[node name="CameraMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.625, 1.25)
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Visuals/modelbase")
+tree_root = SubResource("AnimationNodeStateMachine_smehm")
+anim_player = NodePath("../Visuals/modelbase/AnimationPlayer")
+parameters/conditions/is_idle = false
+parameters/conditions/is_jumping = false
+parameters/conditions/is_running_b = false
+parameters/conditions/is_running_f = false
+parameters/conditions/is_running_l = false
+parameters/conditions/is_running_r = false
+
+[editable path="Visuals/modelbase"]

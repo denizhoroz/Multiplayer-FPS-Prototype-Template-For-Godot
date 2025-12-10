@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0nyb2pqqlmpt"]
+
+[ext_resource type="Script" uid="uid://c8hboym8785vl" path="res://scripts/game_manager.gd" id="1_hwd4i"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("world", "gui")]
+script = ExtResource("1_hwd4i")
+world = NodePath("World")
+gui = NodePath("GUI")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 202.0
+offset_right = -120.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
